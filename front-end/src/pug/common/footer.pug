@@ -1,0 +1,95 @@
+footer.rodape
+	.box__newsletter
+		.container(data-animate="fadeInLeft animated")
+			h2.title NEWS#[br]LETTER
+
+			.descricao
+				p Cadastre-se e receba nossas novidades e descontos em primeira mão.
+			// ./descricao
+
+			form.form__newsletter
+				form-group(
+					input
+					type="email"
+					name="newsletter['email']"
+					id="newsletter-email"
+					label="E-MAIL"
+					placeholder="E-MAIL"
+					sr-only
+				)
+
+				.form-check.checkbox
+					input.form-check-input(type="checkbox" name="newsletter['checkbox']" id="newsletter-checkbox")
+					label.form-check-label(for="newsletter-checkbox") Eu li e concordo com os
+						a(href="termos-de-uso.html" aria-label="Termos e condições de uso.") termos e condições de uso.
+
+				button(type="submit" aria-label="assinar").btn.btn__assinar assinar
+			// ./form__newsletter
+		// ./container
+	// ./box__newsletter
+
+	.box__redes
+		.container(data-animate="fadeInRight animated")
+			.box__absolute
+				h2.title ACOMPANHE-NOS
+
+				.redes
+					a(href="#" aria-label="Instagram")
+						i.fab.fa-instagram
+					a(href="#" aria-label="Facebook")
+						i.fab.fa-facebook-f
+					a(href="#" aria-label="Twitter")
+						i.fab.fa-twitter
+					a(href="#" aria-label="Whatsapp")
+						i.fab.fa-whatsapp
+				// ./redes
+			// ./box__absolute
+		// ./container
+	// ./box__redes
+	.container
+		.box__infos
+			.contatos(data-animate="fadeInUp animated")
+				h2.title ALGUMA DÚVIDA?
+
+				a(href="tel:" aria-label="SAC").sac 0800 000 000
+
+				.telefones
+					a(href="tel:" aria-label="Telefone") (00) 00000-0000 |
+					a(href="tel:" aria-label="Telefone") (00) 00000-0000
+				// ./telefones
+
+				a(href="mailto:" aria-label="E-mail").email contato@loremipsum.com.br
+
+				p Rua Lorem Ipsum, 123 - Lorem #[br] Rio de Janeiro - RJ | CEP: 00000-0000
+			// ./contatos
+
+			.minha__conta(data-animate="fadeInDown animated")
+				h2.title MINHA CONTA:
+
+				a(href="#" aria-label="Minha conta").link.active Minha conta
+				a(href="#" aria-label="Meus Pedidos").link Meus Pedidos
+				a(href="#" aria-label="Meu Carrinho").link Meu Carrinho
+				a(href="#" aria-label="Login/Registrar-se").link Login / registre-se
+				a(href="#" aria-label="Newsletter").link Newsletter
+			// ./minha__conta
+
+			.ajuda(data-animate="fadeInUp animated")
+				h2.title PODEMOS TE AJUDAR?
+
+				a(href="#" aria-label="Política de Privacidade").link Política de Privacidade
+				a(href="#" aria-label="Troca ou Devolução").link Troca ou Devolução
+				a(href="#" aria-label="Termos de Uso").link Termos de Uso
+				a(href="#" aria-label="Pagamentos").link Pagamentos
+				a(href="#" aria-label="Entregas").link Entregas
+			// ./ajuda
+		// ./box__infos
+	// ./container
+
+	.sub__rodape
+		.container(data-animate="fadeInLeft animated")
+
+			.gv8 Front feito por Cleisson Vilela ❤
+			// ./gv8
+		// ./container
+	// ./sub__rodape
+// ./rodape

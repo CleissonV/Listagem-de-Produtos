@@ -1,0 +1,26 @@
+.modal.custom__modal#modal__consulta(tabindex="-1" role="dialog")
+	.modal-dialog.modal-dialog-centered(role="document")
+		.modal-content
+			.modal-body
+				.segura__botao__modal
+					button(type="button" data-dismiss="modal" aria-label="Fechar modal")
+						span(aria-hidden="true").fas.fa-times
+						span.sr-only Fechar Modal
+				.esgotado__modal__conteudo
+					.esgotado__titulo PRODUTO SOB CONSULTA
+					.esgotado__desc Insira seu e-mail, nome e telefone abaixo para lhe passarmos as informações sobre o produto
+					form.esgotado__form
+						.segura__esgotado
+							label(for="esgotado__nome").sr-only Insira seu nome
+							input(type="text" id="esgotado__nome" name="esgotado__nome" autocomplete="off" placeholder="Insira seu nome").contato__input
+						.segura__esgotado
+							label(for="esgotado__email").sr-only Insira seu e-mail
+							input(type="text" id="esgotado__email" name="esgotado__email" autocomplete="off" placeholder="Insira seu e-mail").contato__input
+						.segura__esgotado
+							label(for="esgotado__telefone").sr-only Insira seu telefone
+							input(type="tel" id="esgotado__telefone" name="esgotado__telefone" autocomplete="off" placeholder="Insira seu telefone").contato__input
+						.segura__esgotado
+							.checkbox__custom
+								input(type="checkbox" name="concordo__check" id="concordo__check").check__custom__input
+								label(for="concordo__check").check__custom__label Eu li e concordo com as <a href="termos.html"> condições e termos de uso</a>
+						button.conteudo__btn FAZER CONSULTA

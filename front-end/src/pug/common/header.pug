@@ -1,0 +1,167 @@
+block active
+	-var active = 'home'
+//- block active
+
+-
+	var menuAtivo = function(string) {
+		if(string === active) {
+			return 'active'
+		}else {
+			return '';
+		}
+	}
+
+header.topo
+	.topo__menu
+		.principal__topo__menu
+			.desconto <span>CUPOM DE DESCONTO "BOAS-VINDAS"</span>: 5% de desconto na primeira compra.
+		// ./principal__topo__menu
+	// ./topo__menu
+
+	// PARA FAZER O BOTÃO DE LOGIN TROCAR COM BOTÃO DE LOGADO PARA APARECER O DROPDOWN COLOCAR A CLASSE .logado na div .ante__main__topo
+	.ante__main__topo.logado
+		.principal__ante__main__topo
+			.logo
+				a(href="listagem-produtos.html")
+					img(
+						src="assets/images/lorem-logo-custom.webp"
+						alt="Lyna Freitas Clothes"
+						width="350"
+						height="160"
+						loading="lazy"
+					).img-fluid
+			// ./logo
+
+			.box__buttons
+				a(href="#" aria-label="Minha conta").btn.btn__padrao.btn__login
+					img(
+						src="assets/images/icone-usuario.webp"
+						alt="Login"
+						width="65"
+						height="65"
+						loading="lazy"
+					)
+					p.sr-only Faça seu  <span> login </span>
+				.dropdown
+					button(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false").logado__toggler.btn.btn__padrao
+						img(
+							src="assets/images/icone-usuario.webp"
+							alt="Login"
+							width="65"
+							height="65"
+							loading="lazy"
+						)
+
+						.sr-only.login__texto Faça seu  <span> login </span>
+					.dropdown-menu.logado__menu
+						.logado__nome OLÁ, NOME LOREM IPSUM
+						.logado__item
+							a(href="#").logado__link Meus Dados
+						.logado__item
+							a(href="#").logado__link Meus Endereços
+						.logado__item
+							a(href="#").logado__link Meus Pedidos
+						.logado__item
+							a(href="#").logado__link Alterar Senha
+						.encerrar__item
+							a(href="#").encerrar__link ENCERRAR SESSÃO
+				button(type="button" aria-label="Carrinho").btn.btn__padrao
+					img(
+						src="assets/images/icone-sacola.webp"
+						alt="sacola"
+						width="65"
+						height="65"
+						loading="lazy"
+					)
+
+					span 00
+			// ./box__buttons
+
+		// ./principal__ante__main__topo
+	// ./ante__main__topo
+
+	.mobile__controls
+		.logo
+			a(href="listagem-produtos.html")
+				img(
+					src="assets/images/lorem-logo-custom.webp"
+					alt="Lyna Freitas Clothes"
+					width="350"
+					height="160"
+					loading="lazy"
+				).img-fluid
+		// ./logo
+
+		.box__buttons
+			a(href="#" aria-label="Minha conta").btn.btn__padrao.btn__login
+				img(
+					src="assets/images/icone-usuario.webp"
+					alt="Login"
+					width="65"
+					height="65"
+					loading="lazy"
+				)
+				p.sr-only Faça seu  <span> login </span>
+			.dropdown
+				button(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false").logado__toggler.btn.btn__padrao
+					img(
+						src="assets/images/icone-usuario.webp"
+						alt="Login"
+						width="65"
+						height="65"
+						loading="lazy"
+					)
+
+					.sr-only.login__texto Faça seu  <span> login </span>
+				.dropdown-menu.logado__menu
+					.logado__nome OLÁ, NOME LOREM IPSUM
+					.logado__item
+						a(href="#").logado__link Meus Dados
+					.logado__item
+						a(href="#").logado__link Meus Endereços
+					.logado__item
+						a(href="#").logado__link Meus Pedidos
+					.logado__item
+						a(href="#").logado__link Alterar Senha
+					.encerrar__item
+						a(href="#").encerrar__link ENCERRAR SESSÃO
+			button(type="button" aria-label="Carrinho").btn.btn__padrao
+				img(
+					src="assets/images/icone-sacola.webp"
+					alt="sacola"
+					width="65"
+					height="65"
+					loading="lazy"
+				)
+
+				span 00
+		// ./box__buttons
+		button(type="button" aria-expanded="false" aria-label="Mostrar menu").btn#menuToggler
+			i.fas.fa-bars
+		// ./menuToggler
+
+	// ./mobile__controls
+
+	nav.main__topo
+		.principal__main__topo
+			.logo
+				a(href="listagem-produtos.html")
+					img(
+						src="assets/images/lorem-logo-custom.webp"
+						alt="Lyna Freitas Clothes"
+						width="350"
+						height="160"
+						loading="lazy"
+					).img-fluid
+			// ./logo
+
+			ul.menu
+				li(class=menuAtivo('listagem-produtos')): a(href="listagem-produtos.html" aria-label="Listagem de Produtos") Listagem de Produtos
+				li(class=menuAtivo('sobre-nos')): a(href="sobre-nos.html" aria-label="Sobre Nós") Sobre Nós
+				li(class=menuAtivo('termos-de-uso')): a(href="termos-de-uso.html" aria-label="Termos de Uso") Termos de Uso
+				li(class=menuAtivo('politica-de-privacidade')): a(href="politica-de-privacidade.html" aria-label="Politica de Privacidade") Politica de Privacidade
+			// ./menu
+		// ./principal__main__topo
+	// ./main__topo
+	.backdrop
+// ./topo

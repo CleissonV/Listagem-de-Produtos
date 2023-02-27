@@ -1,0 +1,209 @@
+/*DESKTOP*/
+@include media-breakpoint-up(lg){
+    .main__topo{
+		width: 100%;
+		background: map-get($cores , cor-primaria);
+
+		.principal__main__topo{
+			width: 100%;
+			min-height: 60px;
+			max-width: 1170px;
+			padding-left: 15px;
+			padding-right: 15px;
+			margin-left: auto;
+			align-items: center;
+			margin-right: auto;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.logo{
+			display: none;
+		}
+
+		.menu{
+			list-style: none;
+			padding-left: 0;
+			margin-bottom: 0;
+			display: flex;
+			position: relative;
+
+			li{
+				display: flex;
+				align-items: center;
+				margin-left: 25px;
+				margin-right: 25px;
+
+				&:first-child{
+					margin-left: 0;
+				}
+
+				&:last-child{
+					margin-right: 0;
+				}
+			}
+
+			a{
+				display: flex;
+				align-items: center;
+				color: #fff;
+				line-height: 16px;
+				font-size: 16px;
+				font-family: 'Abhaya Libre', serif;
+				font-weight: 600;
+				transition: all .3s linear;
+				text-decoration: none;
+				position: relative;
+
+				&:hover{
+					color: map-get($cores , cor-secundaria);
+				}
+			}
+
+			.active a {
+
+				color: map-get($cores , cor-secundaria);
+			}
+		}
+
+		@keyframes bounce {
+			from, to { transform: scale(1, 1); }
+			25% { transform: scale(0.9, 1.1); }
+			50% { transform: scale(1.1, 0.9); }
+			75% { transform: scale(0.95, 1.05); }
+		}
+
+
+
+    }
+}
+
+/*MOBILE*/
+@include media-breakpoint-down(md){
+    .main__topo{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 250px;
+        height: 100%;
+		background: #fff;
+        z-index: 999;
+        overflow: auto;
+		overflow-x: hidden;
+        transform: translateX(-100%);
+
+		.logo{
+			padding: 25px;
+			text-align: center;
+		}
+
+		.menu{
+			display: flex;
+			flex-direction: column;
+			list-style: none;
+			padding-left: 0;
+			margin-top: 40px;
+
+
+			a{
+				display: flex;
+				align-items: center;
+				padding: 0 18px;
+				color: map-get($cores , cor-secundaria);
+				height: 35px;
+				line-height: 18px;
+				font-size: 18px;
+				font-family: 'Abhaya Libre', serif;
+				font-weight: 800;
+				transition: all .3s linear;
+				text-transform: uppercase;
+				text-decoration: none;
+
+				&:hover{
+					color:  map-get($cores , cor-secundaria);
+
+				}
+			}
+
+			.active a {
+				color: map-get($cores , cor-secundaria);
+			}
+
+		}
+
+    }
+
+
+    .main__topo.main__topo--shown{
+        animation: showMenu .4s linear forwards;
+    }
+
+    .main__topo.main__topo--hide{
+        animation: hideMenu .4s linear forwards;
+    }
+
+    .backdrop{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,.8);
+        backdrop-filter: blur(4px);
+        display: none;
+    }
+
+    .backdrop.main__topo--shown{
+        display: block;
+        animation: showBackdrop .4s linear forwards;
+    }
+
+    .backdrop.main__topo--hide{
+        display: block;
+        animation: hideBackdrop .4s linear forwards;
+    }
+}
+
+@keyframes showBackdrop {
+    from {
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes hideBackdrop {
+    to {
+        opacity: 0;
+    }
+
+    from{
+        opacity: 1;
+    }
+}
+
+@keyframes showMenu {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes hideMenu {
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    from{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

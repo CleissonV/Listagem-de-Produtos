@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<title>Listagem de Produtos</title>
+	<meta charset="utf-8">
+	<meta name="description" content="Descrição do projeto Listagem de Produtos">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="format-detection" content="telephone=no"><!-- manifest-->
+	<link rel="manifest" href="assets/application/manifest.json">
+	<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico"><!-- add to home screen (ios)-->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-title" content="Listagem de Produtos">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#ecb7af">
+	<link rel="apple-touch-icon" href="assets/application/icon-152x152.png"><!-- add to home screen (chrome)-->
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="application-name" content="Listagem de Produtos">
+	<meta name="theme-color" content="#ecb7af"><!-- Tile icon for Win8 (144x144 + tile color)-->
+	<meta name="msapplication-TileImage" content="assets/application/icon-144x144.png">
+	<meta name="msapplication-TileColor" content="#ecb7af"><!-- ICONS-->
+	<link rel="icon" sizes="72x72" type="image/png" href="assets/application/icon-72x72.png">
+	<link rel="icon" sizes="96x96" type="image/png" href="assets/application/icon-96x96.png">
+	<link rel="icon" sizes="128x128" type="image/png" href="assets/application/icon-128x128.png">
+	<link rel="icon" sizes="144x144" type="image/png" href="assets/application/icon-144x144.png">
+	<link rel="icon" sizes="152x152" type="image/png" href="assets/application/icon-152x152.png">
+	<link rel="icon" sizes="192x192" type="image/png" href="assets/application/icon-192x192.png">
+	<link rel="icon" sizes="384x384" type="image/png" href="assets/application/icon-384x384.png">
+	<link rel="icon" sizes="512x512" type="image/png" href="assets/application/icon-512x512.png"><!-- PRELOADING-->
+	<link rel="preload" as="script" href="assets/js/jquery.min.js">
+	<link rel="preload" as="script" href="assets/js/bootstrap.min.js">
+	<link rel="preload" as="script" href="assets/js/scripts.min.js">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	<link rel="preload" as="style" href="assets/css/estilos.css"><!-- CSS-->
+	<link rel="stylesheet" href="assets/css/estilos.css">
+</head><!-- colocar no attr [data-path] a url do site para poder fazer o lazyload de scripts sem problemas de rota.-->
+
+<body data-path="http://localhost:9000">
+	<noscript><style>.noscript{position: sticky;top:0;z-index: 1200;background: #D32F2F;color: #FFF;padding: 20px;text-align: center}</style>
+		<div class="noscript">
+			<p class="h1">(&gt;_&lt;) Ops....</p>
+			<p>Seu navegador está com os scripts desabilitados! Para ter uma melhor experiencia com o nosso site, por favor, habiliete-os.</p>
+		</div>
+	</noscript><!--  [if lt IE 10]><style>.ie-message{position: sticky;top: 0;z-index: 1200;background: #FF9800;color: #FFF}</style><div class="ie-message"><p class="h1"><em>Atenção!!!</em></p><p>Seu navegador está desatualizado! Para ter uma melhor experiência com o nosso site, por favor atualize-o para a última versão do Microsoft Edge.</p></div><![endif]-->
+	<div id="app">
+		<sprite-svg></sprite-svg>
+		<header class="topo">
+			<div class="topo__menu">
+				<div class="principal__topo__menu">
+					<div class="desconto"><span>CUPOM DE DESCONTO "BOAS-VINDAS"</span>: 5% de desconto na primeira compra.</div>
+				</div><!-- ./principal__topo__menu-->
+			</div><!-- ./topo__menu-->
+			<!-- PARA FAZER O BOTÃO DE LOGIN TROCAR COM BOTÃO DE LOGADO PARA APARECER O DROPDOWN COLOCAR A CLASSE .logado na div .ante__main__topo-->
+			<div class="ante__main__topo logado">
+				<div class="principal__ante__main__topo">
+					<div class="logo">
+						<a href="listagem-produtos.html">
+							<img class="img-fluid" src="assets/images/lorem-logo-custom.webp" alt="Lyna Freitas Clothes" width="350" height="160" loading="lazy">
+						</a>
+					</div><!-- ./logo-->
+					<div class="box__buttons">
+						<a class="btn btn__padrao btn__login" href="#" aria-label="Minha conta">
+							<img src="assets/images/icone-usuario.webp" alt="Login" width="65" height="65" loading="lazy">
+							<p class="sr-only">Faça seu <span> login </span></p>
+						</a>
+						<div class="dropdown">
+							<button class="logado__toggler btn btn__padrao" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<img src="assets/images/icone-usuario.webp" alt="Login" width="65" height="65" loading="lazy">
+								<div class="sr-only login__texto">Faça seu <span> login </span></div>
+							</button>
+							<div class="dropdown-menu logado__menu">
+								<div class="logado__nome">OLÁ, NOME LOREM IPSUM</div>
+								<div class="logado__item">
+									<a class="logado__link" href="#">Meus Dados</a>
+								</div>
+								<div class="logado__item">
+									<a class="logado__link" href="#">Meus Endereços</a>
+								</div>
+								<div class="logado__item">
+									<a class="logado__link" href="#">Meus Pedidos</a>
+								</div>
+								<div class="logado__item">
+									<a class="logado__link" href="#">Alterar Senha</a>
+								</div>
+								<div class="encerrar__item">
+									<a class="encerrar__link" href="#">ENCERRAR SESSÃO</a>
+								</div>
+							</div>
+						</div>
+						<button class="btn btn__padrao" type="button" aria-label="Carrinho">
+							<img src="assets/images/icone-sacola.webp" alt="sacola" width="65" height="65" loading="lazy"><span>00</span>
+						</button>
+					</div><!-- ./box__buttons-->
+				</div><!-- ./principal__ante__main__topo-->
+			</div><!-- ./ante__main__topo-->
+			<div class="mobile__controls">
+				<div class="logo">
+					<a href="listagem-produtos.html">
+						<img class="img-fluid" src="assets/images/lorem-logo-custom.webp" alt="Lyna Freitas Clothes" width="350" height="160" loading="lazy">
+					</a>
+				</div><!-- ./logo-->
+				<div class="box__buttons">
+					<a class="btn btn__padrao btn__login" href="#" aria-label="Minha conta">
+						<img src="assets/images/icone-usuario.webp" alt="Login" width="65" height="65" loading="lazy">
+						<p class="sr-only">Faça seu <span> login </span></p>
+					</a>
+					<div class="dropdown">
+						<button class="logado__toggler btn btn__padrao" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<img src="assets/images/icone-usuario.webp" alt="Login" width="65" height="65" loading="lazy">
+							<div class="sr-only login__texto">Faça seu <span> login </span></div>
+						</button>
+						<div class="dropdown-menu logado__menu">
+							<div class="logado__nome">OLÁ, NOME LOREM IPSUM</div>
+							<div class="logado__item">
+								<a class="logado__link" href="#">Meus Dados</a>
+							</div>
+							<div class="logado__item">
+								<a class="logado__link" href="#">Meus Endereços</a>
+							</div>
+							<div class="logado__item">
+								<a class="logado__link" href="#">Meus Pedidos</a>
+							</div>
+							<div class="logado__item">
+								<a class="logado__link" href="#">Alterar Senha</a>
+							</div>
+							<div class="encerrar__item">
+								<a class="encerrar__link" href="#">ENCERRAR SESSÃO</a>
+							</div>
+						</div>
+					</div>
+					<button class="btn btn__padrao" type="button" aria-label="Carrinho">
+						<img src="assets/images/icone-sacola.webp" alt="sacola" width="65" height="65" loading="lazy"><span>00</span>
+					</button>
+				</div><!-- ./box__buttons-->
+				<button class="btn" type="button" aria-expanded="false" aria-label="Mostrar menu" id="menuToggler"><i class="fas fa-bars"></i></button><!-- ./menuToggler-->
+			</div><!-- ./mobile__controls-->
+			<nav class="main__topo">
+				<div class="principal__main__topo">
+					<div class="logo">
+						<a href="listagem-produtos.html">
+							<img class="img-fluid" src="assets/images/lorem-logo-custom.webp" alt="Lyna Freitas Clothes" width="350" height="160" loading="lazy">
+						</a>
+					</div><!-- ./logo-->
+					<ul class="menu">
+						<li class="active">
+							<a href="listagem-produtos.html" aria-label="Listagem de Produtos">Listagem de Produtos</a>
+						</li>
+						<li>
+							<a href="sobre-nos.html" aria-label="Sobre Nós">Sobre Nós</a>
+						</li>
+						<li>
+							<a href="termos-de-uso.html" aria-label="Termos de Uso">Termos de Uso</a>
+						</li>
+						<li>
+							<a href="politica-de-privacidade.html" aria-label="Politica de Privacidade">Politica de Privacidade</a>
+						</li>
+					</ul><!-- ./menu-->
+				</div><!-- ./principal__main__topo-->
+			</nav><!-- ./main__topo-->
+			<div class="backdrop"></div>
+		</header><!-- ./topo-->
+		<template>
+			<main class="wrapper">
+				<div class="page__categoria">
+					<div class="container">
+						<h1 class="title__page" data-animate="fadeInLeft animated">Listagem de Produtos</h1>
+						<div class="descricao" data-animate="fadeInUp animated">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+						</div>
+						<div class="row">
+							<div class="col-lg-3" data-animate="fadeInLeft animated">
+								<div class="categorias__listagem">
+									<div class="header__listagem">FILTRE SEUS RESULTADOS</div>
+									<div class="corpo__box">
+										<div class="categoria__box">
+											<label class="titulo__categoria" for="busca">Buscar Produto:</label>
+											<input class="input__personalizado" id="buscaInput" type="text" placeholder="Digite o nome do produto">
+											<button class="btn btn__personalizado" id="busca-btn">Buscar</button>
+										</div>
+										<div class="categoria__box">
+											<label class="titulo__categoria" for="min-preco">Preço Minimo:</label>
+											<input class="input__personalizado" id="min-preco" type="number" placeholder="Preço mínimo">
+											<label class="titulo__categoria" for="max-preco">Preço Maximo:</label>
+											<input class="input__personalizado" id="max-preco" type="number" placeholder="Preço máximo">
+											<button class="btn btn__personalizado" id="filtro-btn">Filtrar</button>
+										</div>
+										<div class="categoria__box">
+											<label class="titulo__categoria" for="ordenar">Ordenar por:</label>
+											<select class="input__personalizado" id="ordenar">
+												<option value="preco-asc">Preço Crescente</option>
+												<option value="preco-desc">Preço Decrescente</option>
+											</select>
+											<button class="btn btn__personalizado" id="ordenar-btn">Ordenar</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-9">
+								<ul class="box__card__produtos" id="listaDeProdutos" data-animate="fadeInRight animated">
+									<card-produto imagem="assets/images/img-produto.webp" titulo="Produto A" novidade promocao promocao__porcentagem="30%" valor__anterior="R$100,00" valor__atual="R$30,00" parcelamento="ou em 6x de R$00,00" nota="4" descricao="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed" data-nome="Produto A" data-preco="30">
+										<div class="box__buttons__action">
+											<a class="btn btn__ver__mais btn__produto" href="produto.html" title="Ver detalhes" aria-label="Ver detalhes"><i class="fas fa-plus"></i></a>
+											<button class="btn btn__sacola btn__produto" title="Comprar" aria-label="Comprar"><i class="fas fa-shopping-bag"></i></button>
+										</div>
+									</card-produto>
+									<card-produto imagem="assets/images/img-produto2.webp" titulo="Produto B" novidade promocao promocao__porcentagem="30%" valor__anterior="R$100,00" valor__atual="R$50,00" parcelamento="ou em 6x de R$00,00" nota="4" descricao="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed" data-nome="Produto B" data-preco="50">
+										<div class="box__buttons__action">
+											<a class="btn btn__ver__mais btn__produto" href="produto.html" title="Ver detalhes" aria-label="Ver detalhes"><i class="fas fa-plus"></i></a>
+											<button class="btn btn__sacola btn__produto" title="Comprar" aria-label="Comprar"><i class="fas fa-shopping-bag"></i></button>
+										</div>
+									</card-produto>
+									<card-produto imagem="assets/images/img-produto3.webp" titulo="Produto C" novidade promocao promocao__porcentagem="30%" valor__anterior="R$100,00" valor__atual="R$20,00" parcelamento="ou em 6x de R$00,00" nota="4" descricao="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed" data-nome="Produto C" data-preco="20">
+										<div class="box__buttons__action">
+											<a class="btn btn__ver__mais btn__produto" href="produto.html" title="Ver detalhes" aria-label="Ver detalhes"><i class="fas fa-plus"></i></a>
+											<button class="btn btn__sacola btn__produto" title="Comprar" aria-label="Comprar"><i class="fas fa-shopping-bag"></i></button>
+										</div>
+									</card-produto>
+									<card-produto imagem="assets/images/img-produto.webp" titulo="Produto D" novidade promocao promocao__porcentagem="30%" valor__anterior="R$100,00" valor__atual="R$80,00" parcelamento="ou em 6x de R$00,00" nota="4" descricao="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed" data-nome="Produto D" data-preco="80">
+										<div class="box__buttons__action">
+											<a class="btn btn__ver__mais btn__produto" href="produto.html" title="Ver detalhes" aria-label="Ver detalhes"><i class="fas fa-plus"></i></a>
+											<button class="btn btn__sacola btn__produto" title="Comprar" aria-label="Comprar"><i class="fas fa-shopping-bag"></i></button>
+										</div>
+									</card-produto>
+									<card-produto imagem="assets/images/img-produto2.webp" titulo="Produto E" novidade promocao promocao__porcentagem="30%" valor__anterior="R$100,00" valor__atual="R$10,00" parcelamento="ou em 6x de R$00,00" nota="4" descricao="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed" data-nome="Produto E" data-preco="10">
+										<div class="box__buttons__action">
+											<a class="btn btn__ver__mais btn__produto" href="produto.html" title="Ver detalhes" aria-label="Ver detalhes"><i class="fas fa-plus"></i></a>
+											<button class="btn btn__sacola btn__produto" title="Comprar" aria-label="Comprar"><i class="fas fa-shopping-bag"></i></button>
+										</div>
+									</card-produto>
+									<card-produto imagem="assets/images/img-produto3.webp" titulo="Produto F" novidade promocao promocao__porcentagem="30%" valor__anterior="R$200,00" valor__atual="R$150,00" parcelamento="ou em 6x de R$00,00" nota="4" descricao="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed" data-nome="Produto F" data-preco="150">
+										<div class="box__buttons__action">
+											<a class="btn btn__ver__mais btn__produto" href="produto.html" title="Ver detalhes" aria-label="Ver detalhes"><i class="fas fa-plus"></i></a>
+											<button class="btn btn__sacola btn__produto" title="Comprar" aria-label="Comprar"><i class="fas fa-shopping-bag"></i></button>
+										</div>
+									</card-produto>
+									<card-produto imagem="assets/images/img-produto.webp" titulo="Produto G" novidade promocao promocao__porcentagem="30%" valor__anterior="R$500,00" valor__atual="R$400,00" parcelamento="ou em 6x de R$00,00" nota="4" descricao="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed" data-nome="Produto G" data-preco="400">
+										<div class="box__buttons__action">
+											<a class="btn btn__ver__mais btn__produto" href="produto.html" title="Ver detalhes" aria-label="Ver detalhes"><i class="fas fa-plus"></i></a>
+											<button class="btn btn__sacola btn__produto" title="Comprar" aria-label="Comprar"><i class="fas fa-shopping-bag"></i></button>
+										</div>
+									</card-produto>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+			<!--/main.wrapper-->
+		</template>
+		<footer class="rodape">
+			<div class="box__newsletter">
+				<div class="container" data-animate="fadeInLeft animated">
+					<h2 class="title">NEWS<br>LETTER</h2>
+					<div class="descricao">
+						<p>Cadastre-se e receba nossas novidades e descontos em primeira mão.</p>
+					</div><!-- ./descricao-->
+					<form class="form__newsletter">
+						<form-group input type="email" name="newsletter['email']" id="newsletter-email" label="E-MAIL" placeholder="E-MAIL" sr-only></form-group>
+						<div class="form-check checkbox">
+							<input class="form-check-input" type="checkbox" name="newsletter['checkbox']" id="newsletter-checkbox">
+							<label class="form-check-label" for="newsletter-checkbox">Eu li e concordo com os<a href="termos-de-uso.html" aria-label="Termos e condições de uso.">termos e condições de uso.</a>
+							</label>
+						</div>
+						<button class="btn btn__assinar" type="submit" aria-label="assinar">assinar</button>
+					</form><!-- ./form__newsletter-->
+				</div><!-- ./container-->
+			</div><!-- ./box__newsletter-->
+			<div class="box__redes">
+				<div class="container" data-animate="fadeInRight animated">
+					<div class="box__absolute">
+						<h2 class="title">ACOMPANHE-NOS</h2>
+						<div class="redes">
+							<a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+							<a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+							<a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+							<a href="#" aria-label="Whatsapp"><i class="fab fa-whatsapp"></i></a>
+						</div><!-- ./redes-->
+					</div><!-- ./box__absolute-->
+				</div><!-- ./container-->
+			</div><!-- ./box__redes-->
+			<div class="container">
+				<div class="box__infos">
+					<div class="contatos" data-animate="fadeInUp animated">
+						<h2 class="title">ALGUMA DÚVIDA?</h2>
+						<a class="sac" href="tel:" aria-label="SAC">0800 000 000</a>
+						<div class="telefones">
+							<a href="tel:" aria-label="Telefone">(00) 00000-0000 |</a>
+							<a href="tel:" aria-label="Telefone">(00) 00000-0000</a>
+						</div><!-- ./telefones-->
+						<a class="email" href="mailto:" aria-label="E-mail">contato@loremipsum.com.br</a>
+						<p>Rua Lorem Ipsum, 123 - Lorem <br> Rio de Janeiro - RJ | CEP: 00000-0000</p>
+					</div><!-- ./contatos-->
+					<div class="minha__conta" data-animate="fadeInDown animated">
+						<h2 class="title">MINHA CONTA:</h2>
+						<a class="link active" href="#" aria-label="Minha conta">Minha conta</a>
+						<a class="link" href="#" aria-label="Meus Pedidos">Meus Pedidos</a>
+						<a class="link" href="#" aria-label="Meu Carrinho">Meu Carrinho</a>
+						<a class="link" href="#" aria-label="Login/Registrar-se">Login / registre-se</a>
+						<a class="link" href="#" aria-label="Newsletter">Newsletter</a>
+					</div><!-- ./minha__conta-->
+					<div class="ajuda" data-animate="fadeInUp animated">
+						<h2 class="title">PODEMOS TE AJUDAR?</h2>
+						<a class="link" href="#" aria-label="Política de Privacidade">Política de Privacidade</a>
+						<a class="link" href="#" aria-label="Troca ou Devolução">Troca ou Devolução</a>
+						<a class="link" href="#" aria-label="Termos de Uso">Termos de Uso</a>
+						<a class="link" href="#" aria-label="Pagamentos">Pagamentos</a>
+						<a class="link" href="#" aria-label="Entregas">Entregas</a>
+					</div><!-- ./ajuda-->
+				</div><!-- ./box__infos-->
+			</div><!-- ./container-->
+			<div class="sub__rodape">
+				<div class="container" data-animate="fadeInLeft animated">
+					<div class="gv8">Front feito por Cleisson Vilela ❤</div><!-- ./gv8-->
+				</div><!-- ./container-->
+			</div><!-- ./sub__rodape-->
+		</footer><!-- ./rodape-->
+		<div class="modal custom__modal" id="modal__consulta" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-body">
+						<div class="segura__botao__modal">
+							<button type="button" data-dismiss="modal" aria-label="Fechar modal"><span class="fas fa-times" aria-hidden="true"></span><span class="sr-only">Fechar Modal</span></button>
+						</div>
+						<div class="esgotado__modal__conteudo">
+							<div class="esgotado__titulo">PRODUTO SOB CONSULTA</div>
+							<div class="esgotado__desc">Insira seu e-mail, nome e telefone abaixo para lhe passarmos as informações sobre o produto</div>
+							<form class="esgotado__form">
+								<div class="segura__esgotado">
+									<label class="sr-only" for="esgotado__nome">Insira seu nome</label>
+									<input class="contato__input" type="text" id="esgotado__nome" name="esgotado__nome" autocomplete="off" placeholder="Insira seu nome">
+								</div>
+								<div class="segura__esgotado">
+									<label class="sr-only" for="esgotado__email">Insira seu e-mail</label>
+									<input class="contato__input" type="text" id="esgotado__email" name="esgotado__email" autocomplete="off" placeholder="Insira seu e-mail">
+								</div>
+								<div class="segura__esgotado">
+									<label class="sr-only" for="esgotado__telefone">Insira seu telefone</label>
+									<input class="contato__input" type="tel" id="esgotado__telefone" name="esgotado__telefone" autocomplete="off" placeholder="Insira seu telefone">
+								</div>
+								<div class="segura__esgotado">
+									<div class="checkbox__custom">
+										<input class="check__custom__input" type="checkbox" name="concordo__check" id="concordo__check">
+										<label class="check__custom__label" for="concordo__check">Eu li e concordo com as <a href="termos.html"> condições e termos de uso</a>
+										</label>
+									</div>
+								</div>
+								<button class="conteudo__btn">FAZER CONSULTA</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Poisitions aceitas pelo attr [position]:- left-bottom
+- left-top
+- right-bottom
+- right-top-->
+		<btn-whatsapp fone="+55 (99) 9.1234-5678" position="left-bottom"></btn-whatsapp>
+		<!--Ao clicar em "Aceitar e Fechar", é emitido o evento 'termos.cookies' que pode ser escutado da seguinte forma:
+<script>
+	window.$on('termos.cookies', function(event) {
+		console.log(event);
+	})
+</script>
+
+Observação:
+O termo reseta as 00h e 1 min, caso precise resetar agora, use o seguinte código no console do navegador:
+
+<script>
+	localStorage.clear();
+</script>-->
+		<msg-cookies>Utilizamos cookies para personalizar anúncios e melhorar a sua experiência no site. Ao continuar navegando, você concorda com a nossa <a href="politica-de-privacidade.html">Política de Privacidade</a>
+		</msg-cookies>
+	</div>
+	<!--/#app-->
+	<!--Foi adicionada uma classe para auxiliar na validação de CPF, CNPJ e E-mail no js do workflow. Para usá-la(o) faça da seguinte forma:
+
+<script>
+// Instanciando a classe
+// O métodos SEMPRE retornam um booleano
+const Validador = new Validator();
+
+// Testando os valores
+let emailValido = Validador.email('adfadf');
+let cpfValido = Validador.email('000.000.000-00');
+let cnValido = Validador.email('00.000.000/0000-00');
+</script>
+-->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/elevatezoom/2.2.3/jquery.elevatezoom.min.js" integrity="sha512-UH428GPLVbCa8xDVooDWXytY8WASfzVv3kxCvTAFkxD2vPjouf1I3+RJ2QcSckESsb7sI+gv3yhsgw9ZhM7sDw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="assets/js/scripts.min.js"></script>
+</body>
+
+</html>

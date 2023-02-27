@@ -1,0 +1,166 @@
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1299; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  /* Modal Content/Box */
+  .modal-content {
+	background: transparent;
+	border: 0;
+
+	.filtro__busca{
+		margin-top: 30px;
+		.form-control{
+			box-shadow: none;
+			border-radius: 0;
+			font-family: 'poppinstregular',sans-serif;
+			font-size: 12px;
+
+			&::placeholder{
+				font-family: 'poppinsregular',sans-serif;
+				font-size: 12px;
+			}
+
+
+		}
+
+		.selected{
+			background: map-get($cores, cor-primaria);
+		}
+	}
+
+	.filtro__mobile{
+		@include media-breakpoint-up(lg){
+			display: none;
+		}
+	}
+
+	.modal-header {
+		border-bottom: none;
+	}
+
+	.modal-title{
+		color: #fff;
+		font-size: 20px;
+		font-family: 'montserratbold',sans-serif;
+	}
+
+	.form__pesquisa{
+		display: flex;
+		align-items: center;
+		width: auto;
+		padding-top:20px;
+		height: 40px;
+		border-radius: 40px;
+		position: relative;
+
+		@include media-breakpoint-down(md){
+			display: flex;
+			flex-direction: column;
+		}
+
+		.form-group{
+			width: 100%;
+			margin-bottom: 0;
+		}
+
+		.form__input{
+			margin-bottom: 0;
+		}
+
+		.select__personalizado{
+			transform: translateY(-12px);
+
+			.form-control{
+				background:  map-get($cores, cor-primaria );
+				color: #fff;
+				border:0;
+				box-shadow: none;
+			}
+
+			.md-select-options{
+				background: map-get($cores, cor-primaria);
+				color: #fff;
+
+				.selected{
+					background: #fff;
+					color: map-get($cores, cor-primaria);
+				}
+
+				li:hover{
+					background: #fff;
+					color: map-get($cores, cor-primaria);
+				}
+			}
+		}
+
+		.form__input .form-control{
+			width:100%;
+			border-radius: 40px;
+			height: 40px;
+			border: none;
+			background:  map-get($cores, cor-primaria );
+			color: #fff;
+			font-family: 'Montserrat', sans-serif;
+			font-style: italic;
+			font-size: 12px;
+			box-shadow: none;
+			margin-left: 20px;
+
+			@include media-breakpoint-down(md){
+				margin-left: 0;
+			}
+
+			&::placeholder{
+				color: #fff;
+				font-family: 'Montserrat', sans-serif;
+				font-style: italic;
+				font-size: 12px;
+			}
+
+		}
+
+
+
+		.btn__pesquisa{
+			position: absolute;
+			right: 0;
+			top: 10px;
+			font-size: 18px;
+			color: #fff;
+			display: block;
+			box-shadow: none;
+
+			@include media-breakpoint-down(md){
+				top: 20px;
+			}
+		}
+	}
+  }
+
+  /* The Close Button */
+  .close {
+	color: #fff;
+	align-self: flex-end;
+	font-size: 28px;
+	opacity: 1;
+	font-weight: bold;
+	margin-bottom: 40px;
+  }
+
+  .close:hover,
+  .close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+  }
+

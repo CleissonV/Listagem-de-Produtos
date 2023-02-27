@@ -1,0 +1,196 @@
+extend common/template.pug
+
+block title
+	-var title = 'Listagem de Produtos';
+//- block title
+
+block theme
+	-var $theme = '#ecb7af';
+//- block theme
+
+block active
+	-var active = 'listagem-produtos'
+//- block active
+
+block conteudo
+
+	.page__categoria
+		.container
+			h1.title__page(data-animate="fadeInLeft animated") Listagem de Produtos
+
+			.descricao(data-animate="fadeInUp animated")
+				p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+
+			.row
+				.col-lg-3(data-animate="fadeInLeft animated")
+					.categorias__listagem
+						.header__listagem FILTRE SEUS RESULTADOS
+						.corpo__box
+							.categoria__box
+								label(for="busca").titulo__categoria Buscar Produto:
+								input#buscaInput.input__personalizado(type="text" placeholder="Digite o nome do produto")
+								button#busca-btn.btn.btn__personalizado Buscar
+							.categoria__box
+								label.titulo__categoria(for="min-preco") Preço Minimo:
+								input#min-preco.input__personalizado(type="number" placeholder="Preço mínimo")
+
+								label.titulo__categoria(for="max-preco") Preço Maximo:
+								input#max-preco.input__personalizado(type="number" placeholder="Preço máximo")
+								button#filtro-btn.btn.btn__personalizado Filtrar
+							.categoria__box
+								label(for="ordenar").titulo__categoria Ordenar por:
+								select#ordenar.input__personalizado
+									option(value="preco-asc") Preço Crescente
+									option(value="preco-desc") Preço Decrescente
+								button#ordenar-btn.btn.btn__personalizado Ordenar
+
+				.col-lg-9
+					ul.box__card__produtos#listaDeProdutos(data-animate="fadeInRight animated")
+						card-produto(
+							imagem="assets/images/img-produto.webp"
+							titulo="Produto A"
+							novidade
+							promocao
+							promocao__porcentagem="30%"
+							valor__anterior="R$100,00"
+							valor__atual="R$30,00"
+							parcelamento="ou em 6x de R$00,00"
+							nota="4"
+							descricao="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed"
+							data-nome="Produto A"
+							data-preco="30"
+						)
+							.box__buttons__action
+								a(href="produto.html" title="Ver detalhes" aria-label="Ver detalhes").btn.btn__ver__mais.btn__produto
+									<i class="fas fa-plus"></i>
+
+								button(title="Comprar" aria-label="Comprar").btn.btn__sacola.btn__produto
+									<i class="fas fa-shopping-bag"></i>
+
+						card-produto(
+							imagem="assets/images/img-produto2.webp"
+							titulo="Produto B"
+							novidade
+							promocao
+							promocao__porcentagem="30%"
+							valor__anterior="R$100,00"
+							valor__atual="R$50,00"
+							parcelamento="ou em 6x de R$00,00"
+							nota="4"
+							descricao="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed"
+							data-nome="Produto B"
+							data-preco="50"
+						)
+							.box__buttons__action
+								a(href="produto.html" title="Ver detalhes" aria-label="Ver detalhes").btn.btn__ver__mais.btn__produto
+									<i class="fas fa-plus"></i>
+
+								button(title="Comprar" aria-label="Comprar").btn.btn__sacola.btn__produto
+									<i class="fas fa-shopping-bag"></i>
+
+						card-produto(
+							imagem="assets/images/img-produto3.webp"
+							titulo="Produto C"
+							novidade
+							promocao
+							promocao__porcentagem="30%"
+							valor__anterior="R$100,00"
+							valor__atual="R$20,00"
+							parcelamento="ou em 6x de R$00,00"
+							nota="4"
+							descricao="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed"
+							data-nome="Produto C"
+							data-preco="20"
+						)
+							.box__buttons__action
+								a(href="produto.html" title="Ver detalhes" aria-label="Ver detalhes").btn.btn__ver__mais.btn__produto
+									<i class="fas fa-plus"></i>
+
+								button(title="Comprar" aria-label="Comprar").btn.btn__sacola.btn__produto
+									<i class="fas fa-shopping-bag"></i>
+
+
+						card-produto(
+							imagem="assets/images/img-produto.webp"
+							titulo="Produto D"
+							novidade
+							promocao
+							promocao__porcentagem="30%"
+							valor__anterior="R$100,00"
+							valor__atual="R$80,00"
+							parcelamento="ou em 6x de R$00,00"
+							nota="4"
+							descricao="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed"
+							data-nome="Produto D"
+							data-preco="80"
+						)
+							.box__buttons__action
+								a(href="produto.html" title="Ver detalhes" aria-label="Ver detalhes").btn.btn__ver__mais.btn__produto
+									<i class="fas fa-plus"></i>
+
+								button(title="Comprar" aria-label="Comprar").btn.btn__sacola.btn__produto
+									<i class="fas fa-shopping-bag"></i>
+
+
+						card-produto(
+							imagem="assets/images/img-produto2.webp"
+							titulo="Produto E"
+							novidade
+							promocao
+							promocao__porcentagem="30%"
+							valor__anterior="R$100,00"
+							valor__atual="R$10,00"
+							parcelamento="ou em 6x de R$00,00"
+							nota="4"
+							descricao="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed"
+							data-nome="Produto E"
+							data-preco="10"
+						)
+							.box__buttons__action
+								a(href="produto.html" title="Ver detalhes" aria-label="Ver detalhes").btn.btn__ver__mais.btn__produto
+									<i class="fas fa-plus"></i>
+
+								button(title="Comprar" aria-label="Comprar").btn.btn__sacola.btn__produto
+									<i class="fas fa-shopping-bag"></i>
+
+						card-produto(
+							imagem="assets/images/img-produto3.webp"
+							titulo="Produto F"
+							novidade
+							promocao
+							promocao__porcentagem="30%"
+							valor__anterior="R$200,00"
+							valor__atual="R$150,00"
+							parcelamento="ou em 6x de R$00,00"
+							nota="4"
+							descricao="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed"
+							data-nome="Produto F"
+							data-preco="150"
+						)
+							.box__buttons__action
+								a(href="produto.html" title="Ver detalhes" aria-label="Ver detalhes").btn.btn__ver__mais.btn__produto
+									<i class="fas fa-plus"></i>
+
+								button(title="Comprar" aria-label="Comprar").btn.btn__sacola.btn__produto
+									<i class="fas fa-shopping-bag"></i>
+
+						card-produto(
+							imagem="assets/images/img-produto.webp"
+							titulo="Produto G"
+							novidade
+							promocao
+							promocao__porcentagem="30%"
+							valor__anterior="R$500,00"
+							valor__atual="R$400,00"
+							parcelamento="ou em 6x de R$00,00"
+							nota="4"
+							descricao="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed"
+							data-nome="Produto G"
+							data-preco="400"
+						)
+							.box__buttons__action
+								a(href="produto.html" title="Ver detalhes" aria-label="Ver detalhes").btn.btn__ver__mais.btn__produto
+									<i class="fas fa-plus"></i>
+
+								button(title="Comprar" aria-label="Comprar").btn.btn__sacola.btn__produto
+									<i class="fas fa-shopping-bag"></i>

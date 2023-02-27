@@ -1,0 +1,408 @@
+extend common/template.pug
+
+block title
+	-var title = 'Listagem de Produtos';
+//- block title
+
+block theme
+	-var $theme = '#ecb7af';
+//- block theme
+
+block active
+	-var active = 'listagem-produtos'
+//- block active
+
+block conteudo
+
+	.page__produto
+		.container
+			.segura__produto__detalhe
+				.row.row__produto__interna
+					.col-lg-6(data-animate="fadeInLeft animated")
+						.visualizar__desktop
+							v-zoom-desktop(
+								:fotos=`[
+									{
+										id: 'img-1',
+										active: true,
+										xl: 'https://picsum.photos/id/1050/1000/1000',
+										md: 'https://picsum.photos/id/1050/540/510',
+										xs: 'https://picsum.photos/id/1050/100/100',
+										alt: 'foto a'
+									},
+									{
+										id: 'img-2',
+										active: false,
+										xl: 'https://via.placeholder.com/1000x1000?text=2',
+										md: 'https://via.placeholder.com/540x510?text=2',
+										xs: 'https://via.placeholder.com/100x100?text=2',
+										alt: 'foto b'
+									},
+									{
+										id: 'img-3',
+										active: false,
+										xl: 'https://via.placeholder.com/1000x1000?text=3',
+										md: 'https://via.placeholder.com/540x510?text=3',
+										xs: 'https://via.placeholder.com/100x100?text=3',
+										alt: 'foto c'
+									},
+									{
+										id: 'img-4',
+										active: false,
+										xl: 'https://via.placeholder.com/1000x1000?text=4',
+										md: 'https://via.placeholder.com/540x510?text=4',
+										xs: 'https://via.placeholder.com/100x100?text=4',
+										alt: 'foto d'
+									},
+									{
+										id: 'img-5',
+										active: false,
+										xl: 'https://via.placeholder.com/1000x1000?text=5',
+										md: 'https://via.placeholder.com/540x510?text=5',
+										xs: 'https://via.placeholder.com/100x100?text=5',
+										alt: 'foto e'
+									},
+									{
+										id: 'img-6',
+										active: false,
+										xl: 'https://via.placeholder.com/1000x1000?text=6',
+										md: 'https://via.placeholder.com/540x510?text=6',
+										xs: 'https://via.placeholder.com/100x100?text=6',
+										alt: 'foto F'
+									}
+								]`
+							)
+						.visualizar__mobile
+							v-zoom-mobile(
+								:fotos=`[
+									{
+										id: 'img-1',
+										active: true,
+										xl: 'https://picsum.photos/id/1050/1000/1000',
+										md: 'https://picsum.photos/id/1050/655/655',
+										xs: 'https://picsum.photos/id/1050/100/100',
+										alt: 'foto a'
+									},
+									{
+										id: 'img-2',
+										active: false,
+										xl: 'https://via.placeholder.com/1000x1000?text=2',
+										md: 'https://via.placeholder.com/655x655?text=2',
+										xs: 'https://via.placeholder.com/100x100?text=2',
+										alt: 'foto b'
+									},
+									{
+										id: 'img-3',
+										active: false,
+										xl: 'https://via.placeholder.com/1000x1000?text=3',
+										md: 'https://via.placeholder.com/655x655?text=3',
+										xs: 'https://via.placeholder.com/100x100?text=3',
+										alt: 'foto c'
+									},
+									{
+										id: 'img-4',
+										active: false,
+										xl: 'https://via.placeholder.com/1000x1000?text=4',
+										md: 'https://via.placeholder.com/655x655?text=4',
+										xs: 'https://via.placeholder.com/100x100?text=4',
+										alt: 'foto d'
+									},
+									{
+										id: 'img-5',
+										active: false,
+										xl: 'https://via.placeholder.com/1000x1000?text=5',
+										md: 'https://via.placeholder.com/655x655?text=5',
+										xs: 'https://via.placeholder.com/100x100?text=5',
+										alt: 'foto e'
+									},
+									{
+										id: 'img-6',
+										active: false,
+										xl: 'https://via.placeholder.com/1000x1000?text=6',
+										md: 'https://via.placeholder.com/655x655?text=6',
+										xs: 'https://via.placeholder.com/100x100?text=6',
+										alt: 'foto F'
+									}
+								]`
+							)
+
+					.col-lg-6.mtg(data-animate="fadeInRight animated")
+						h1.produto__detalhe__titulo Nome do produto lorem ipsum dolor sit amet, consectetur
+						.produto__detalhe__codigo Cod: 902-0922-1234-04
+							.produto__detalhe__avaliacao
+								.rating__stars(data-rating="3.5" aria-label="Nota 4.5 de 5")
+									i.fas.fa-star
+									i.fas.fa-star
+									i.fas.fa-star
+									i.fas.fa-star
+									i.fas.fa-star
+								.avaliacoes__quant 11 avaliações
+						.produto__descricao
+							span.titulo Descrição:
+
+							.descricao
+								p This is Photoshop's version  ofert as Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat.
+							// ./descricao
+
+							button( type="button" data-toggle="collapse" data-target="#sub_1" aria-expanded="false").btn__mais__descricao leia mais
+
+							.mais__descricao.collapse#sub_1
+								p This is Photoshop's version  ofert as Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat.
+								p This is Photoshop's version  ofert as Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat.
+								p This is Photoshop's version  ofert as Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat.
+						.produto__comprar
+
+							.produto__detalhe__box.esgotado__box.esgotado__estoque
+								.esgotado__titulo Avise-me quando voltar ao estoque!
+								.esgotado__desc Informaremos quando o produto voltar ao estoque. Por favor, deixe seu endereço de e-mail válido abaixo.
+
+								form.form__estoque
+									.group
+										span @
+
+										form-group(
+											input
+											type="email"
+											name="contato['email']"
+											id="contato-email"
+											label="Email completo*"
+											placeholder="Email completo*"
+											sr-only
+											aria-hidden="true"
+										)
+									// ./group
+
+									button(type="submit" aria-label="Enviar").btn.btn__enviar ENVIAR
+								// ./form__estoque
+							.produto__detalhe__box.esgotado__box
+								.esgotado__titulo PRODUTO SOB CONSULTA
+								.esgotado__desc Preencha o formulário para lhe passarmos as informações sobre o produto
+								button(type="button" data-toggle="modal" data-target="#modal__consulta").conteudo__btn.voltar__btn.btn CONSULTAR
+							.produto__detalhe__box
+								.box__selects
+									.tamanho
+										label(for="tamanho").sr-only
+										select(name="tamanho" for="tamanho")
+											option(value="") Escolha o tamanho
+											option(value="GG") GG
+											option(value="G") G
+											option(value="M") M
+											option(value="P") P
+									.cor
+										label(for="cor").sr-only
+										select(name="cor" for="cor")
+											option(value="") Escolha uma cor
+											option(value="Preto") Preto
+											option(value="Branco") Branco
+
+							.produto__detalhe__box
+								.row
+									.valor__box.col-md-6
+										.produto__detalhe__valor
+											span Por
+											.detalhe__dinheiro R$ 1199,90
+										.produto__detalhe__juros ou 10x de R$ 119,99
+									.col-md-6.produto__off
+										.desconto 10% off no boleto
+							.produto__detalhe__box
+								.segura__frete__detalhe
+									form.frete__detalhe
+										input(type="text" id="cep__produto" name="cep__produto" autocomplete="off" placeholder="Digite o CEP para entrega").frete__input
+										label(for="cep__produto").sr-only Digite o CEP para entrega
+										button(type="button").frete__btn Calcular
+								a(href="#").frete__link
+									i.fas.fa-truck
+									span Calcule o prazo pelo CEP
+						.sociais__produto
+							.sociais__produto__span Gostou? Então compartilhe para seus amigos!
+							nav.sociais__produto__nav
+								a(href="#" title="Facebook" aria-label="Facebook" rel="noopener" target="_blank")
+									span(aria-hidden="true").fab.fa-facebook-f
+									span.sr-only Facebook Ícone
+								a(href="#" title="Instagram" aria-label="Instagram" rel="noopener" target="_blank")
+									span(aria-hidden="true").fab.fa-instagram
+									span.sr-only Instagram Ícone
+								a(href="#" title="YouTube" aria-label="YouTube" rel="noopener" target="_blank")
+									span(aria-hidden="true").fab.fa-youtube
+									span.sr-only YouTube
+						a(href="#").produto__detalhe__botao ADICIONAR AO CARRINHO
+				.row.row__avaliacao
+					.col-lg-6(data-animate="fadeInLeft animated")
+						h1.titulo__avaliacoes AVALIAÇÕES
+						.estrela__media
+							.avaliacao__media 4.5
+							.rating__stars(data-rating="4.5" aria-label="Nota 4.5 de 5")
+								i.fas.fa-star
+								i.fas.fa-star
+								i.fas.fa-star
+								i.fas.fa-star
+								i.fas.fa-star
+							.numero__avaliacoes (147)
+						.avaliacao__listagem
+							.avaliacao__card
+								.avaliacao__header
+									.rating__stars(data-rating="3" aria-label="Nota 3 de 5")
+										i.fas.fa-star
+										i.fas.fa-star
+										i.fas.fa-star
+										i.fas.fa-star
+										i.fas.fa-star
+									.numero__avaliacoes (0)
+								.avaliacao__conteudo
+									.comentario Comentário teste Lorem ipsum dolor set only example the version photoshop again more studio picture editor
+									.comentario__nome Rogério
+							.avaliacao__card
+								.avaliacao__header
+									.rating__stars(data-rating="4" aria-label="Nota 4 de 5")
+										i.fas.fa-star
+										i.fas.fa-star
+										i.fas.fa-star
+										i.fas.fa-star
+										i.fas.fa-star
+									.numero__avaliacoes (0)
+								.avaliacao__conteudo
+									.comentario Comentário teste Lorem ipsum dolor set only example the version photoshop again more studio picture editor
+									.comentario__nome Maria
+					.col-lg-6(data-animate="fadeInRight animated")
+						form.avaliacao__form
+							.avaliacao__sub Faça uma avaliação para este produto*
+							.avaliacao__radio
+								.form-group.radio__custom
+									input(type="radio" name="avaliacao__nota" id="pessimo" value="20%").radio__avaliacao
+									label(for="pessimo").label__avaliacao Péssimo
+								.form-group.radio__custom
+									input(type="radio" name="avaliacao__nota" id="ruim" value="40%").radio__avaliacao
+									label(for="ruim").label__avaliacao Ruim
+								.form-group.radio__custom
+									input(type="radio" name="avaliacao__nota" id="regular" value="60%").radio__avaliacao
+									label(for="regular").label__avaliacao Regular
+								.form-group.radio__custom
+									input(type="radio" name="avaliacao__nota" id="bom" value="80%").radio__avaliacao
+									label(for="bom").label__avaliacao Bom
+								.form-group.radio__custom
+									input(type="radio" name="avaliacao__nota" id="otimo" value="100%").radio__avaliacao
+									label(for="otimo").label__avaliacao Ótimo
+							.avaliacao__escreva Seu nome:
+							.form-group
+								label(for="nome__avaliacao").sr-only nome:
+								input(type="text" name="nome__avaliacao" id="nome__avaliacao" autocomplete="off").avaliacao__input
+							.avaliacao__escreva Escreva sua opinião abaixo*:
+							.form-group
+								label(for="comentario__avaliacao").sr-only comentario:
+								textarea(name="comentario__avaliacao" id="comentario__avaliacao" autocomplete="off" rows="6").avaliacao__input
+							.segura__avaliar__btn
+								button(type="submit").btn.btn__enviar ENVIAR
+
+				h2.title(data-animate="fadeInLeft animated") Você também pode se interessar no(s) seguinte(s) produto(s)
+				.row.row__mais__produtos
+					owl-carousel(id="owl-servicos" nav :xl="3" :lg="3" :md="2" :sm="1" data-animate="fadeInUp animated")
+						card-produto(
+							imagem="assets/images/img-produto.webp"
+							titulo="Produto A"
+							novidade
+							promocao
+							promocao__porcentagem="30%"
+							valor__anterior="R$100,00"
+							valor__atual="R$30,00"
+							parcelamento="ou em 6x de R$00,00"
+							nota="4"
+							descricao="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed"
+							data-nome="Produto A"
+							data-preco="30"
+						)
+							.box__buttons__action
+								a(href="produto.html" title="Ver detalhes" aria-lable="Ver detalhes").btn.btn__ver__mais.btn__produto
+									<i class="fas fa-plus"></i>
+
+								button(title="Comprar" aria-lable="Comprar").btn.btn__sacola.btn__produto
+									<i class="fas fa-shopping-bag"></i>
+
+						card-produto(
+							imagem="assets/images/img-produto2.webp"
+							titulo="Produto B"
+							novidade
+							promocao
+							promocao__porcentagem="30%"
+							valor__anterior="R$100,00"
+							valor__atual="R$50,00"
+							parcelamento="ou em 6x de R$00,00"
+							nota="4"
+							descricao="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed"
+							data-nome="Produto B"
+							data-preco="50"
+						)
+							.box__buttons__action
+								a(href="produto.html" title="Ver detalhes" aria-lable="Ver detalhes").btn.btn__ver__mais.btn__produto
+									<i class="fas fa-plus"></i>
+
+								button(title="Comprar" aria-lable="Comprar").btn.btn__sacola.btn__produto
+									<i class="fas fa-shopping-bag"></i>
+
+						card-produto(
+							imagem="assets/images/img-produto3.webp"
+							titulo="Produto C"
+							novidade
+							promocao
+							promocao__porcentagem="30%"
+							valor__anterior="R$100,00"
+							valor__atual="R$20,00"
+							parcelamento="ou em 6x de R$00,00"
+							nota="4"
+							descricao="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed"
+							data-nome="Produto C"
+							data-preco="20"
+						)
+							.box__buttons__action
+								a(href="produto.html" title="Ver detalhes" aria-lable="Ver detalhes").btn.btn__ver__mais.btn__produto
+									<i class="fas fa-plus"></i>
+
+								button(title="Comprar" aria-lable="Comprar").btn.btn__sacola.btn__produto
+									<i class="fas fa-shopping-bag"></i>
+
+
+						card-produto(
+							imagem="assets/images/img-produto.webp"
+							titulo="Produto D"
+							novidade
+							promocao
+							promocao__porcentagem="30%"
+							valor__anterior="R$100,00"
+							valor__atual="R$80,00"
+							parcelamento="ou em 6x de R$00,00"
+							nota="4"
+							descricao="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed"
+							data-nome="Produto D"
+							data-preco="80"
+						)
+							.box__buttons__action
+								a(href="produto.html" title="Ver detalhes" aria-lable="Ver detalhes").btn.btn__ver__mais.btn__produto
+									<i class="fas fa-plus"></i>
+
+								button(title="Comprar" aria-lable="Comprar").btn.btn__sacola.btn__produto
+									<i class="fas fa-shopping-bag"></i>
+
+
+						card-produto(
+							imagem="assets/images/img-produto2.webp"
+							titulo="Produto E"
+							novidade
+							promocao
+							promocao__porcentagem="30%"
+							valor__anterior="R$100,00"
+							valor__atual="R$10,00"
+							parcelamento="ou em 6x de R$00,00"
+							nota="4"
+							descricao="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed"
+							data-nome="Produto E"
+							data-preco="10"
+						)
+							.box__buttons__action
+								a(href="produto.html" title="Ver detalhes" aria-lable="Ver detalhes").btn.btn__ver__mais.btn__produto
+									<i class="fas fa-plus"></i>
+
+								button(title="Comprar" aria-lable="Comprar").btn.btn__sacola.btn__produto
+									<i class="fas fa-shopping-bag"></i>
+
+					// ./owl-carousel
+				// ./row
+	// ./page__produto

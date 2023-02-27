@@ -1,0 +1,72 @@
+.topo__menu{
+	width: 100%;
+	background: map-get($cores, cor-primaria);
+
+	@include media-breakpoint-down(md){
+		display: none;
+	}
+
+	.principal__topo__menu{
+		width: 100%;
+        max-width: 1170px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: auto;
+		align-items: center;
+		min-height: 60px;
+        margin-right: auto;
+        display: flex;
+		justify-content: space-between;
+
+		@include media-breakpoint-down(md){
+			flex-direction: column;
+			padding-top: 15px;
+		}
+
+		@include media-breakpoint-down(sm){
+			padding-top: 5px;
+		}
+	}
+
+	.desconto{
+		font-size: 13px;
+		font-weight: 400;
+		font-family: 'Abhaya Libre', serif;
+		color: #fff;
+
+		span{
+			font-size: 16px;
+			font-weight: 800;
+		}
+	}
+
+	.menu{
+		display: flex;
+		align-items: center;
+		list-style: none;
+		padding-left: 0;
+		margin-bottom: 0;
+
+		li{
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+
+		a{
+			color: #fff;
+			text-decoration: none;
+			font-weight: 600;
+			font-size:  16px;
+			font-family: 'Abhaya Libre', serif;
+			transition: color .4s linear;
+
+			&:hover{
+				color: #FFEB3B;
+			}
+		}
+
+		.active a{
+			color: #FFEB3B;
+		}
+	}
+}

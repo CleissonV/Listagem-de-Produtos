@@ -1,0 +1,23 @@
+@import "_mobile_controls";
+@import "_main_topo";
+@import "_ante_main_topo";
+@import "_modal";
+@import "_topo_menu";
+
+.topo{
+	width: 100%;
+    position: relative;
+	background: #fff;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+}
+
+/**************************************************************************
+						MOBILE/TABLET
+***************************************************************************/
+@include media-breakpoint-down(md){
+	.topo{
+		position: sticky !important;
+	}
+}
